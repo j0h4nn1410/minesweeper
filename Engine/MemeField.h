@@ -8,7 +8,7 @@ class MemeField
 public:
 	enum class State
 	{
-		Fucked,
+		Lost,
 		Winrar,
 		Memeing
 	};
@@ -25,7 +25,7 @@ private:
 	public:
 		void SpawnMeme();
 		bool HasMeme() const;
-		void Draw( const Vei2& screenPos,MemeField::State fucked,Graphics& gfx ) const;
+		void Draw( const Vei2& screenPos,MemeField::State lost,Graphics& gfx ) const;
 		void Reveal();
 		bool IsRevealed() const;
 		void ToggleFlag();

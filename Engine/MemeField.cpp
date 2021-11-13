@@ -18,7 +18,7 @@ bool MemeField::Tile::HasMeme() const
 
 void MemeField::Tile::Draw( const Vei2& screenPos,MemeField::State fieldState,Graphics& gfx ) const
 {
-	if( fieldState != MemeField::State::Fucked )
+	if( fieldState != MemeField::State::Lost )
 	{
 		switch( state )
 		{
@@ -41,7 +41,7 @@ void MemeField::Tile::Draw( const Vei2& screenPos,MemeField::State fieldState,Gr
 			break;
 		}
 	}
-	else // we are fucked
+	else // we are lost
 	{
 		switch( state )
 		{
@@ -224,7 +224,7 @@ void MemeField::RevealTile( const Vei2& gridPos )
 		tile.Reveal();
 		if( tile.HasMeme() )
 		{
-			state = State::Fucked;
+			state = State::Lost;
 			sndLose.Play();
 		}
 		else if( tile.HasNoNeighborMemes() )
